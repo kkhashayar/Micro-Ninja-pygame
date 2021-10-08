@@ -8,6 +8,7 @@ from map import *
 from time import sleep
 from pygame.locals import *
 import math
+from os import _exit
 
 pygame.init()
 mixer.init()
@@ -858,8 +859,10 @@ def music_control():
         mixer.music.stop()
 
 def start_screen():
-    "player.kill()"
     global score_file
+    
+    def exit_game():
+        _exit(1)
     score_file = open("score.txt", "r+")
     ingame_bg_x = -200
     last_animation = pygame.time.get_ticks()
