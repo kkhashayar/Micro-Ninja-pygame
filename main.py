@@ -874,8 +874,7 @@ def start_screen():
         cursor_x, cursor_y = pygame.mouse.get_pos()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                running = False
-                pygame.quit()
+                _exit(1)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     running = False
@@ -894,7 +893,7 @@ def start_screen():
         screen.blit(menu_bg,(0,0))
         bt_start = create_button("start", "start_frame", x,100, 100,30, "orange", "darkgreen", "Start", cursor_x,cursor_y,click,  main)
         #-- bt_music = create_button("music", "music_frame", x,140, 100,30, "orange", "darkgreen", "Music", cursor_x,cursor_y,click,  music_control)
-        bt_exit = create_button("exit", "exit_frame", x,140, 100,30, "orange", "darkgreen", "Exit", cursor_x,cursor_y,click,  exit)
+        bt_exit = create_button("exit", "exit_frame", x,140, 100,30, "orange", "darkgreen", "Exit", cursor_x,cursor_y,click,  exit_game)
         screen.blit(cursor_image_2,(cursor_x, cursor_y))
         pygame.display.flip()
 
